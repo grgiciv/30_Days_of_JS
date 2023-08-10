@@ -1,0 +1,3 @@
+// Create a human readable time format using the Date time object. The hour and the minute should be all the time two digits(7 hours should be 07 and 5 minutes should be 05) YYY-MM-DD HH:mm eg. 20120-01-02 07:05
+let date = new Date();
+console.log(`${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")} ${date.getHours()}:${date.getMinutes().toString().padStart(2, "0")}`);

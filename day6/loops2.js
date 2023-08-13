@@ -50,6 +50,7 @@ let rgbNumber = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(
   Math.random() * 256
 )},${Math.floor(Math.random() * 256)})`;
 console.log(rgbNumber);
+console.log("_____________");
 
 // Using the countries array below, create the following new array. ["ALBANIA", "BOLIVIA", "CANADA", "DENMARK", "ETHIOPIA", "FINLAND", "GERMANY", "HUNGARY", "IRELAND", "JAPAN", "KENYA"]
 const countries = [
@@ -68,10 +69,12 @@ const countries = [
 
 let countriesUpper = countries.map((country) => country.toUpperCase());
 console.log(countriesUpper);
+console.log("_____________");
 
 // Using the above countries array, create an array for countries length'.
 let countriesLength = countries.map((country) => country.length);
 console.log(countriesLength);
+console.log("_____________");
 
 /* Use the countries array to create the following array of arrays: [
   ['Albania', 'ALB', 7],
@@ -92,5 +95,13 @@ const arrArr = countries.map(
     new Array(country, country.slice(0, 3).toUpperCase(), country.length)
 );
 console.log(arrArr);
+console.log("_____________");
 
 // In above countries array, check if there is a country or countries containing the word 'land'. If there are countries containing 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
+const landCountries = countries.filter((country) => country.includes("land"));
+landCountries.length > 0
+  ? console.log(landCountries)
+  : console.log("All these countries are without land");
+console.log("_____________");
+
+// In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'. ['Albania', 'Bolivia','Ethiopia']

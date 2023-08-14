@@ -105,3 +105,86 @@ landCountries.length > 0
 console.log("_____________");
 
 // In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'. ['Albania', 'Bolivia','Ethiopia']
+const iaCountries = [];
+for (let i = 0; i < countries.length; i++) {
+  if (countries[i].includes("ia")) {
+    iaCountries.push(countries[i]);
+  }
+}
+iaCountries.length > 0
+  ? console.log(iaCountries)
+  : console.log("These are countries ends without ia");
+console.log("_____________");
+
+// Using the above countries array, find the country containing the biggest number of characters. Ethiopia
+const reversed = countries.sort(
+  (firstCountry, secondCountry) => firstCountry.length - secondCountry.length
+);
+console.log(reversed.pop());
+console.log("_____________");
+
+// Using the above countries array, find the country containing only 5 characters. ['Japan', 'Kenya']
+const fiveChars = countries.filter((country) => country.length == 5);
+console.log(fiveChars);
+console.log("_____________");
+
+// Find the longest word in the webTechs array
+const webTechs = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Redux",
+  "Node",
+  "MongoDB",
+];
+const longestWord = webTechs.sort(
+  (tech1, tech2) => tech1.length - tech2.length
+);
+console.log(longestWord.pop());
+console.log("_____________");
+longestWord.push("JavaScript"); // adds element previously deleted with pop()
+
+// Use the webTechs array to create the following array of arrays: [["HTML", 4], ["CSS", 3],["JavaScript", 10],["React", 5],["Redux", 5],["Node", 4],["MongoDB", 7]]
+const techModified = webTechs.map((tech) => new Array(tech, tech.length));
+console.log(techModified);
+console.log("_____________");
+
+// An application created using MongoDB, Express, React and Node is called a MERN stack app. Create the acronym MERN by using the array mernStack
+const mernStack = ["MongoDB", "Express", "React", "Node"];
+console.log(mernStack.map((tech) => tech.slice(0, 1)).join(""));
+console.log("_____________");
+
+// Iterate through the array, ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"] using a for loop or for of loop and print out the items.
+for (i = 0; i < webTechs.length; i++) {
+  console.log(webTechs[i]);
+}
+console.log("_____________");
+
+// This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
+const fruits = ["banana", "orange", "mango", "lemon"];
+const fruitsReversed = [];
+for (let i = fruits.length - 1; i >= 0; i--) {
+  fruitsReversed.push(fruits[i]);
+}
+console.log(fruitsReversed);
+console.log("_____________");
+
+/* Print all the elements of array as shown below.
+const fullStack = [
+  ['HTML', 'CSS', 'JS', 'React'],
+  ['Node', 'Express', 'MongoDB']
+]
+HTML
+CSS
+JS
+REACT
+NODE
+EXPRESS
+MONGODB */
+const fullStack = [
+  ["HTML", "CSS", "JS", "React"],
+  ["Node", "Express", "MongoDB"],
+];
+let flatFullStack = fullStack.flat();
+flatFullStack.map((tech) => console.log(tech.toUpperCase()));

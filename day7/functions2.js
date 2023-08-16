@@ -39,7 +39,10 @@ console.log("_________");
 
 function showDateTime() {
   let date = new Date();
-  return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${date
+  return `${date.getDate().toString().padStart(2, "0")}/${date
+    .getMonth()
+    .toString()
+    .padStart(2, "0")}/${date.getFullYear()} ${date
     .getHours()
     .toString()
     .padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;

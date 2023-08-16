@@ -45,7 +45,7 @@ console.log("_________");
 
 //Area of a circle is calculated as follows: area = π x r x r. Write a function which calculates areaOfCircle
 function areaOfCircle(radius) {
-  let area = Number.parseFloat(Math.PI).toFixed(3) * radius ** 2;
+  let area = Math.PI.toFixed(3) * radius ** 2;
   return area;
 }
 console.log(areaOfCircle(3));
@@ -53,7 +53,7 @@ console.log("_________");
 
 // Circumference of a circle is calculated as follows: circumference = 2πr. Write a function which calculates circumOfCircle
 function circumOfCircle(radius) {
-  let circumference = 2 * Number.parseFloat(Math.PI).toFixed(3) * radius;
+  let circumference = 2 * Math.PI.toFixed(3) * radius;
   return circumference;
 }
 console.log(circumOfCircle(6));
@@ -61,7 +61,7 @@ console.log("_________");
 
 // Density of a substance is calculated as follows:density= mass/volume. Write a function which calculates density.
 function density(mass, volume) {
-  let density = Number.parseFloat(mass / volume).toFixed(4);
+  let density = (mass / volume).toFixed(4);
   return density;
 }
 console.log(density(7, 9));
@@ -69,7 +69,7 @@ console.log("_________");
 
 // Speed is calculated by dividing the total distance covered by a moving object divided by the total amount of time taken. Write a function which calculates a speed of a moving object, speed.
 function speed(distance, time) {
-  let speed = Number.parseFloat(distance / time).toFixed(4);
+  let speed = (distance / time).toFixed(4);
   return speed;
 }
 console.log(speed(100, 7));
@@ -145,6 +145,14 @@ console.log(findMax(0, -10, -2))
 0
  */
 function findMax(num1, num2, num3) {
-  return Math.max(num1, num2, num3);
+  const nums = [];
+  if (num1 > num2 && num1 > num3) {
+    nums[2] = num1;
+  } else if (num2 > num1 && num2 > num3) {
+    nums[2] = num2;
+  } else {
+    nums[2] = num3;
+  }
+  return nums[2];
 }
 console.log(findMax(1.23e10, 70, 89907));

@@ -128,8 +128,9 @@ function convertRgbToHexa(rgb) {
   const hexArray = [];
   for (let i = 0; i < rgbArray.length; i++) {
     let hexQuotient = Math.floor(rgbArray[i] / 16);
+    console.log("kvocijent", hexQuotient);
     let hexRemainder = rgbArray[i] % 16;
-
+    console.log("remainder", hexRemainder);
     if (hexQuotient === 10) {
       hexQuotient = "a";
     } else if (hexQuotient === 11) {
@@ -143,8 +144,8 @@ function convertRgbToHexa(rgb) {
     } else if (hexQuotient === 15) {
       hexQuotient = "f";
     }
-    hexArray.push(hexQuotient);
 
+    hexArray.push(hexQuotient);
     if (hexRemainder === 10) {
       hexRemainder = "a";
     } else if (hexRemainder === 11) {
@@ -163,7 +164,7 @@ function convertRgbToHexa(rgb) {
 
   return `#${hexArray.join("")}`;
 }
-console.log(convertRgbToHexa("rgb(20, 15, 60)"));
+console.log(convertRgbToHexa("rgb(200, 159, 60)"));
 
 // Write a function generateColors which can generate any number of hexa or rgb colors. console.log(generateColors('hexa', 3)) // ['#a3e12f', '#03ed55', '#eb3d2b']
 console.log("____7____");
@@ -208,6 +209,66 @@ function shuffleArray(array) {
   return shuffledArray;
 }
 console.log(shuffleArray([1, 5, false, "bla"]));
+/* Much simpler method:
+function shuffleArrays(array) {
+  array.sort((item) => Math.random() - 0.5);
+  return array;
+}
+console.log(shuffleArrays([2, 3, 6, 5, 7])); */
 
 // Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
 console.log("____9____");
+function factorial(number) {
+  let factorial = 1;
+  for (let i = 1; i <= number; i++) {
+    factorial *= i;
+  }
+  return factorial;
+}
+console.log(factorial(4));
+
+// Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+console.log("____10____");
+
+const isEmpty = (parameter) => {
+  return parameter
+    ? console.log("Parameter is not empty")
+    : console.log("Parameter is empty");
+};
+console.log(isEmpty(true));
+console.log(isEmpty(false));
+console.log(isEmpty(""));
+console.log(isEmpty("A string"));
+console.log(isEmpty([]));
+console.log(isEmpty([1, "A", false, []]));
+console.log(isEmpty({}));
+
+// Call your function sum, it takes any number of arguments and it returns the sum.
+console.log("____11____");
+const sum = (...args) => {
+  let numSum = 0;
+  for (const element of args) {
+    numSum += element;
+  }
+
+  return numSum;
+};
+console.log(sum(1, 4, 5, 7));
+
+// Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+console.log("____12____");
+const arrayItems = [2, true, 3, 643, 4, "t", "2"];
+const arr2 = [2, 3, 66, 33];
+function sumOfArrayItems(array) {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (!(typeof array[i] === "number")) {
+      return "all elements in given array are not numbers";
+    } else {
+      sum += array[i];
+    }
+  }
+  return sum;
+}
+console.log(sumOfArrayItems(arrayItems));
+console.log(sumOfArrayItems(arr2));

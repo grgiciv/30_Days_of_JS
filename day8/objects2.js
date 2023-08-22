@@ -10,7 +10,7 @@ const mostSkills = [];
 for (let i = 0; i < userArray.length; i++) {
   mostSkills.push(userArray[i][1].skills.length);
 }
-
+console.log(mostSkills);
 let numberOfSkills = Math.max(...mostSkills);
 let indexOfSkilledPerson = mostSkills.indexOf(numberOfSkills);
 
@@ -56,7 +56,7 @@ console.log(values);
 
 // Use the countries object to print a country name, capital, populations and languages.
 console.log("_____7_____");
-const languages = countries.map((country) =>
+countries.map((country) =>
   console.log(
     "Name:",
     country.name,

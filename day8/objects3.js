@@ -128,8 +128,8 @@ function rateProduct(userIdName, productId, productRate) {
   );
   item.ratings.push({ userId: userIdName, rate: productRate });
 }
-rateProduct("ab12ex", "aegfal", 300);
-rateProduct("RAAAAx", "aegfal", 3500);
+rateProduct("ab12ex", "aegfal", 4);
+rateProduct("RAAAAx", "aegfal", 3);
 
 console.log(products);
 console.log("_________");
@@ -144,5 +144,29 @@ function averageRating(productId) {
   console.log(ratingSum / product.ratings.length);
   return ratingSum / product.ratings.length;
 }
-averageRating("eedfcf");
+averageRating("aegfal");
 console.log("_____");
+
+// Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
+
+function likeProduct(userId, productId) {
+  const product = products.find((element) => element._id === productId);
+  const userExist = users.find((element) => element._id === userId);
+  const userLiked = product.likes.find((element) => element === userId);
+  if (!userExist) {
+    console.log("ERROR - USER DOES NOT EXIST");
+    alert("ERROR - USER DOES NOT EXIST");
+  } else if (userExist && !userLiked) {
+    product.likes.push(userExist._id);
+  } else {
+    product.likes.splice(
+      product.likes.findIndex((element) => element === userLiked),
+      1
+    );
+  }
+  return products;
+}
+
+likeProduct("ghderc", "aegfal");
+
+console.log(products);

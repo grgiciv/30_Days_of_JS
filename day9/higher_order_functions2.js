@@ -7,7 +7,7 @@ const products = [
   { product: "tea", price: "" },
 ];
 
-import { countries } from "./countries.js";
+import { countries } from "../day8/countries.js";
 
 // Find the total price of products by chaining two or more array iterators(eg. arr.map(callback).filter(callback).reduce(callback))
 console.log("_____1_____");

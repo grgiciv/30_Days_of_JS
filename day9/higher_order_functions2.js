@@ -43,7 +43,7 @@ console.log(categorizeCountries(countries));
 
 // Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
 console.log("_____4_____");
-// Bad english
+// Weird english
 
 // Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
 console.log("_____5_____");
